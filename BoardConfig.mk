@@ -65,7 +65,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Kernel
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive kpti=off
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo
@@ -96,7 +96,7 @@ AB_OTA_UPDATER := false
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 
 # VNDK
 BOARD_VNDK_VERSION := current
@@ -128,3 +128,6 @@ TW_NO_SCREEN_BLANK := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/kernel/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 PLATFORM_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 10.0
+
+# PRODUCT_COPY_FILES directives.
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
