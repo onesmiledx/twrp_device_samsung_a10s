@@ -135,3 +135,7 @@ PLATFORM_VERSION := 10.0
 
 # PRODUCT_COPY_FILES directives.
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
+# MKBootimg
+MKBOOTIMG := device/samsung/a10s/mkbootimg
+
