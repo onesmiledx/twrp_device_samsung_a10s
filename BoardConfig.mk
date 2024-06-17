@@ -98,6 +98,8 @@ AB_OTA_UPDATER := false
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 
+BOARD_ROOT_EXTRA_FOLDERS := cache sec_efs nvram nvdata nvcfg efs omr 
+
 # VNDK
 BOARD_VNDK_VERSION := current
 
