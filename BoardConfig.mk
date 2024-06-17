@@ -15,8 +15,10 @@
 # limitations under the License.
 #
 
-# Device Tree Path
+# Device
+BOARD_VENDOR := samsung
 DEVICE_PATH := device/samsung/a10s
+DEVICE_CODENAME := a10s
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
