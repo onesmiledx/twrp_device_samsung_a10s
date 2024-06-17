@@ -26,8 +26,6 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/a10s/device.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a10s/recovery/root,recovery/root)
-
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := a10s
 PRODUCT_NAME := twrp_a10s
