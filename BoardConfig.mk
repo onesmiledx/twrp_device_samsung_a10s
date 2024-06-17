@@ -15,8 +15,10 @@
 # limitations under the License.
 #
 
-# Device Tree Path
+# Device
+BOARD_VENDOR := samsung
 DEVICE_PATH := device/samsung/a10s
+DEVICE_CODENAME := a10s
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -53,6 +55,7 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_USES_UEFI := true
 
 # File systems
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 6853492736 # This is the estimated size of system image
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 # This is the estimated size of boot image
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -98,8 +101,6 @@ AB_OTA_UPDATER := false
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 
-BOARD_ROOT_EXTRA_FOLDERS := cache sec_efs nvram nvdata nvcfg efs omr 
-
 # VNDK
 BOARD_VNDK_VERSION := current
 
@@ -132,15 +133,5 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/kernel/config/usb_gadget/g1/functions/m
 PLATFORM_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 10.0
 
-# Logging & Debugging
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
-
-# Include
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
-
 # PRODUCT_COPY_FILES directives.
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
-# Fix build recovery image for ofox 12.1
-FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER := 1
