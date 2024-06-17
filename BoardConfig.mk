@@ -127,7 +127,6 @@ TW_MTP_DEVICE := "Galaxy A10ass"
 TW_EXCLUDE_TWRPAPP := true
 TW_EXTRA_LANGUAGES := true
 TW_USE_NEW_MINADBD := true
-TW_NO_SCREEN_TIMEOUT := true
 TW_NO_SCREEN_BLANK := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/kernel/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 PLATFORM_SECURITY_PATCH := 2099-12-31
