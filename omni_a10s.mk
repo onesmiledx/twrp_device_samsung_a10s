@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a10s/recove
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := a10s
-PRODUCT_NAME := twrp_a10s
+PRODUCT_NAME := omni_a10s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := Galaxy A10s
 
