@@ -55,6 +55,7 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_USES_UEFI := true
 
 # File systems
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 6853492736 # This is the estimated size of system image
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 # This is the estimated size of boot image
 BOARD_HAS_LARGE_FILESYSTEM := true
