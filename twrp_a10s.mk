@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from common vendor config
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/a10s/device.mk)
@@ -36,15 +36,5 @@ PRODUCT_MODEL := Galaxy A10s
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1520
 
-# SHRP Flags
-SHRP_DEVICE_CODE := a10s
-SHRP_PATH := device/samsung/$(SHRP_DEVICE_CODE)
-SHRP_MAINTAINER := Starlix
-SHRP_REC_TYPE := SAR
-SHRP_DEVICE_TYPE := A/B
-SHRP_REC := </dev/block/by-name/recovery>
-SHRP_HAS_RECOVERY_PARTITION := true
-SHRP_EDL_MODE := 0
-SHRP_FLASH := 1
-SHRP_NOTCH := true
-SHRP_LITE := true
+# PBRP Flags
+PB_GO := TRUE
