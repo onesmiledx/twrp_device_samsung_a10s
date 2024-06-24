@@ -40,7 +40,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export LC_ALL="C.UTF-8"
 		
 		export OF_MAINTAINER="Starlix"
-		export FOX_BUILD_TYPE="Stable-Starlix"
+		export FOX_BUILD_TYPE="Stable-A10s"
 		export FOX_VERSION="R12.1"
 
 
@@ -64,18 +64,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export OF_FL_PATH1="/sys/class/backlight/panel/brightness"
 		export OF_FL_PATH2=""
 		export OF_FLASHLIGHT_ENABLE=1
-		export OF_SCREEN_H="2280"
 		export OF_HIDE_NOTCH=0
 		export OF_CLOCK_POS=0
 		export OF_ALLOW_DISABLE_NAVBAR=0
 		export OF_USE_SYSTEM_FINGERPRINT=1
 		export OF_USE_TWRP_SAR_DETECT=1
 		#export FOX_USE_UNZIP_BINARY=1
-		export FOX_DISABLE_APP_MANAGER=1
 		#export FOX_USE_XZ_UTILS=1
-		export OF_STATUS_INDENT_LEFT="50"
-		export OF_STATUS_INDENT_RIGHT="-50"
-		export OF_STATUS_H="50"
 		export OF_USE_GREEN_LED=0
 		export OF_SUPPORT_PRE_FLASH_SCRIPT=1
 
