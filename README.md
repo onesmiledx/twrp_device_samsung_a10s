@@ -1,3 +1,13 @@
+## Recovery Device Tree for the Samsung Galaxy A10s 
+
+## How-to compile it:
+- Clone TWRP source
+```sh
+. build/envsetup.sh
+lunch twrp_a10s-eng
+make recoveryimage
+```
+
 TWRP configuration for Samsung Galaxy A10s (a10s)
 ================================================================
  
