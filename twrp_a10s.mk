@@ -34,8 +34,6 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(DEVICE_PATH)/recovery/root,recovery/root)
-
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := a10s
 PRODUCT_NAME := twrp_a10s
