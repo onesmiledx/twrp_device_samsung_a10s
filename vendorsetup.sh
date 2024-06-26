@@ -1,2 +1,0 @@
-add_lunch_combo twrp_a10s-userdebug
-add_lunch_combo twrp_a10s-eng
