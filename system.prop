@@ -1,0 +1,3 @@
+ro.display.series=Samsung Galaxy A10s
+ro.board.platform=mt6765
+ro.boot.dynamic_partitions=true
