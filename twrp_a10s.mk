@@ -16,8 +16,8 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from common vendor config
@@ -31,6 +31,19 @@ PRODUCT_DEVICE := a10s
 PRODUCT_NAME := twrp_a10s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := Galaxy A10s
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=a10s \
+    BUILD_PRODUCT=a10s \
+    TARGET_DEVICE=a10s
+
+# HACK: Set vendor patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.bootimage.build.date.utc \
+    ro.build.date.utc
 
 # Resolution
 TARGET_SCREEN_WIDTH := 720
