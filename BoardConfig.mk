@@ -1,18 +1,8 @@
 #
-# Copyright (C) 2020 The Android Open Source Project
-# Copyright (C) 2020 The TWRP Open Source Project
+# Copyright (C) 2023 The Android Open Source Project
+# Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
 #
 
 # Device
@@ -37,16 +27,21 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
-TARGET_USES_64_BIT_BINDER := true
-TARGET_SUPPORTS_64_BIT_APPS := false
 
-# Misc
-TARGET_CPU_SMP := true
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
+TARGET_USES_64_BIT_BINDER := true
+TARGET_IS_64_BIT := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a10s,a10sxx
+
+TARGET_CPU_ABI_LIST := arm64-v8a,armeabi-v7a,armeabi
+TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a
+TARGET_CPU_ABI_LIST_32_BIT := armeabi-v7a,armeabi
+
+TARGET_BOARD_SUFFIX := _64
+
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
 
 # Bootloader
 TARGET_SOC := mt6765
@@ -54,6 +49,12 @@ TARGET_BOOTLOADER_BOARD_NAME := S96116CA1
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_USES_UEFI := true
+
+# Build
+BUILD_BROKEN_DUP_RULES := true
+
+# Display
+TARGET_SCREEN_DENSITY := 280
 
 # File systems
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
@@ -98,11 +99,11 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 AB_OTA_UPDATER := false
 
 # Recovery
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-
-# VNDK
-BOARD_VNDK_VERSION := current
+BOARD_USE_FRAMEBUFFER_ALPHA_CHANNEL := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_DISABLE_TRIPLE_BUFFERING := false
 
 # TWRP specific build flags
 TW_INPUT_BLACKLIST := "hbtp_vm"
@@ -114,31 +115,42 @@ TW_USE_SAMSUNG_HAPTICS := true
 # Do not set up legacy properties
 TW_NO_LEGACY_PROPS := true
 TW_USE_TOOLBOX := true
+TW_NO_BATT_PERCENT := false
 TW_Y_OFFSET := 55
 TW_H_OFFSET := -55
 TW_NO_SCREEN_TIMEOUT := true
 TW_NO_SCREEN_BLANK := true
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TW_DEVICE_VERSION := StarlixTWRP_SM-A107x
 TW_INCLUDE_NTFS_3G := true
 TW_MTP_DEVICE := "Galaxy A10ass"
 TW_EXCLUDE_TWRPAPP := true
-TW_FRAMERATE := 60
 TW_HAS_DOWNLOAD_MODE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_DEFAULT_BRIGHTNESS := 80
+TW_DEFAULT_BRIGHTNESS := 100
 TW_MAX_BRIGHTNESS := 255
-TW_Y_OFFSET := 55
-TY_H_OFFSET := -55
-TW_INCLUDE_NTFS_3G := true
-TW_MTP_DEVICE := "Galaxy A10s"
-TW_USE_NEW_MINADBD := true
-TW_INCLUDE_CRYPTO := false
-TW_INCLUDE_CRYPTO_FBE := false
-TW_INCLUDE_FBT_METADATA_DECRYPT := false
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/kernel/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
-PLATFORM_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 10.0
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_SKIP_COMPATIBILITY_CHECK := true
 
-# PRODUCT_COPY_FILES directives.
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+# Locale
+TW_EXTRA_LANGUAGES := true
+TW_DEFAULT_LANGUAGE := ru
+
+# Properties
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+
+# Hack: prevent anti rollback
+PLATFORM_SECURITY_PATCH := 2099-12-31
+PLATFORM_VERSION := 99.99.99
+
+# exFAT FS Support
+TW_INCLUDE_FUSE_EXFAT := true
+
+# NTFS Support
+TW_INCLUDE_FUSE_NTFS := true
