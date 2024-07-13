@@ -32,19 +32,6 @@ PRODUCT_NAME := twrp_a10s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := Galaxy A10s
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=a10s \
-    BUILD_PRODUCT=a10s \
-    TARGET_DEVICE=a10s
-
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
-    ro.bootimage.build.date.utc \
-    ro.build.date.utc
-
 # Resolution
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1520
