@@ -1,21 +1,88 @@
-/boot           emmc /dev/block/platform/bootdevice/by-name/boot      flags=backup=1;flashimg;display="Boot Image"
-/cache  		ext4 /dev/block/platform/bootdevice/by-name/cache   	flags=backup=1;display="Cache"
-/data   		ext4 /dev/block/platform/bootdevice/by-name/userdata	flags=encryptable=/dev/block/platform/bootdevice/by-name/metadata
-/recovery       emmc /dev/block/platform/bootdevice/by-name/recovery	flags=backup=1;flashimg;display="Recovery Image"
-/efs    		ext4 /dev/block/platform/bootdevice/by-name/efs 		flags=backup=0;display="Encrypting File System (EFS)"
-/metadata       ext4 /dev/block/platform/by-name/metadata	flags=wipeingui;display="Metadata"
-/misc			emmc		/dev/block/by-name/misc								flags=backup=1;display="Misc"
-/nvram          emmc /dev/block/platform/bootdevice/by-name/nvram 		flags=backup=1;display="Nvram"
-/nvdata         emmc /dev/block/platform/bootdevice/by-name/nvdata  	flags=backup=1;display="Nvdata"
-/persistent		emmc		/dev/block/platform/bootdevice/by-name/persistent	flags=backup=1;display="Persistent";subpartitionof=/nvram
-/product        ext4 /dev/block/platform/bootdevice/by-name/product 	flags=backup=1;wipeingui;display="Product"
-/system_root 	ext4 /dev/block/platform/bootdevice/by-name/system  	flags=backup=1;wipeingui;display="System"
-/vendor 		ext4 /dev/block/platform/bootdevice/by-name/vendor  	flags=backup=1;wipeingui;display="Vendor"
-/dtbo_image		emmc /dev/block/platform/bootdevice/by-name/dtbo	    flags=backup=0;flashimg;display="DTBO"
-/product_image	emmc /dev/block/platform/bootdevice/by-name/product 	flags=backup=0;flashimg;display="Product Image"
-/system_image	emmc /dev/block/platform/bootdevice/by-name/system  	flags=backup=0;flashimg
-/vendor_image	emmc /dev/block/platform/bootdevice/by-name/vendor  	flags=backup=0;flashimg
-/up_param		emmc		/dev/block/by-name/up_param							flags=backup=1;display="Up_Param";flashimg=1
+# TWRP fstab Samsung Galaxy a10s (a107f) - CoditNETs Mod
+# 
 
-/external_sd	vfat /dev/block/mmcblk1p1     /dev/block/mmcblk1		flags=display="Micro SD Card";storage;wipeingui;removable
-/usb-otg    	vfat /dev/block/sda1          /dev/block/sda			flags=display="USB-OTG";storage;wipeingui;removable
+# <mnt_point>		<type>	<src>												<mnt_flags and options>
+# Img
+/sda_image			emmc	/dev/block/sda										flags=backup=0;flashimg;display="sda"
+/mmcblk0_image		emmc	/dev/block/mmcblk0									flags=backup=1;flashimg;display="mmcblk0"
+/mmcblk1_image		emmc	/dev/block/mmcblk1									flags=backup=0;flashimg;display="mmcblk1"
+/mmcblk1p1_image	emmc	/dev/block/mmcblk1p1								flags=backup=0;flashimg;display="mmcblk1p1"
+/mmcblk1p2_image	emmc	/dev/block/mmcblk1p2								flags=backup=0;flashimg;display="mmcblk1p2"
+/mmcblk1p3_image	emmc	/dev/block/mmcblk1p3								flags=backup=0;flashimg;display="mmcblk1p3"
+/mmcblk1p4_image	emmc	/dev/block/mmcblk1p4								flags=backup=0;flashimg;display="mmcblk1p4"
+
+/boot_para			emmc	/dev/block/platform/bootdevice/by-name/boot_para	flags=backup=1;flashimg;display="boot_para"
+/para_image			emmc	/dev/block/platform/bootdevice/by-name/para			flags=backup=1;flashimg;display="para"
+/efuse_image		emmc	/dev/block/platform/bootdevice/by-name/efuse		flags=backup=1;flashimg;display="efuse"
+/nvram      		emmc	/dev/block/platform/bootdevice/by-name/nvram 		flags=backup=1;flashimg;display="nvram"
+/efs_image			emmc	/dev/block/platform/bootdevice/by-name/efs			flags=backup=1;flashimg;display="efs"
+/sec_efs_image		emmc	/dev/block/platform/bootdevice/by-name/sec_efs		flags=backup=1;flashimg;display="sec_efs"
+/bota_image			emmc	/dev/block/platform/bootdevice/by-name/bota			flags=backup=1;flashimg;display="bota"
+/param_image		emmc	/dev/block/platform/bootdevice/by-name/param		flags=backup=1;flashimg;display="param"
+/up_param       	emmc	/dev/block/platform/bootdevice/by-name/up_param		flags=backup=1;flashimg;display="up_param"
+/expdb_image		emmc	/dev/block/platform/bootdevice/by-name/expdb		flags=backup=1;flashimg;display="expdb"
+/frp_image			emmc	/dev/block/platform/bootdevice/by-name/frp			flags=backup=1;flashimg;display="frp"
+/nvcfg_image		emmc	/dev/block/platform/bootdevice/by-name/nvcfg		flags=backup=1;flashimg;display="nvcfg"
+/nvdata_image		emmc	/dev/block/platform/bootdevice/by-name/nvdata 		flags=backup=1;flashimg;display="nvdata"
+/metadata_image		emmc	/dev/block/platform/bootdevice/by-name/metadata		flags=backup=1;flashimg;display="metadata"
+/protect1_image		emmc	/dev/block/platform/bootdevice/by-name/protect1		flags=backup=1;flashimg;display="protect1"
+/protect2_image		emmc	/dev/block/platform/bootdevice/by-name/protect2		flags=backup=1;flashimg;display="protect2"
+/seccfg_image		emmc	/dev/block/platform/bootdevice/by-name/seccfg		flags=backup=1;flashimg;display="seccfg"
+/persist_image		emmc	/dev/block/platform/bootdevice/by-name/persist		flags=backup=1;flashimg;display="persist"
+/persistent_image	emmc	/dev/block/platform/bootdevice/by-name/persistent	flags=backup=1;flashimg;display="persistent"
+/misc   			emmc	/dev/block/platform/bootdevice/by-name/misc			flags=backup=1;flashimg;display="misc"
+/sec1_image			emmc	/dev/block/platform/bootdevice/by-name/sec1			flags=backup=1;flashimg;display="sec1"
+/proinfo_image		emmc	/dev/block/platform/bootdevice/by-name/proinfo		flags=backup=1;flashimg;display="proinfo"
+/md1img_image		emmc	/dev/block/platform/bootdevice/by-name/md1img		flags=backup=1;flashimg;display="md1img"
+/spmfw_image		emmc	/dev/block/platform/bootdevice/by-name/spmfw		flags=backup=1;flashimg;display="spmfw"
+/scp1_image			emmc	/dev/block/platform/bootdevice/by-name/scp1			flags=backup=1;flashimg;display="scp1"
+/sspm_1_image		emmc	/dev/block/platform/bootdevice/by-name/sspm_1		flags=backup=1;flashimg;display="sspm_1"
+/lk_image			emmc	/dev/block/platform/bootdevice/by-name/lk			flags=backup=1;flashimg;display="lk"
+/steady_image		emmc	/dev/block/platform/bootdevice/by-name/steady		flags=backup=1;flashimg;display="steady"
+/boot   			emmc	/dev/block/platform/bootdevice/by-name/boot			flags=backup=1;flashimg;display="boot"
+/recovery   		emmc	/dev/block/platform/bootdevice/by-name/recovery		flags=backup=1;flashimg;display="recovery"
+/dtbo_image			emmc	/dev/block/platform/bootdevice/by-name/dtbo			flags=backup=1;flashimg;display="dtbo"
+/tee1_image			emmc	/dev/block/platform/bootdevice/by-name/tee1			flags=backup=1;flashimg;display="tee1"
+/vendor_image		emmc	/dev/block/platform/bootdevice/by-name/vendor		flags=backup=1;flashimg;display="vendor"
+/product_image		emmc	/dev/block/platform/bootdevice/by-name/product		flags=backup=1;flashimg;display="product"
+/system_image		emmc	/dev/block/platform/bootdevice/by-name/system		flags=backup=1;flashimg;display="system"
+/vbmeta     		emmc	/dev/block/platform/bootdevice/by-name/vbmeta		flags=backup=1;flashimg;display="vbmeta"
+/cache_image		emmc	/dev/block/platform/bootdevice/by-name/cache 		flags=backup=1;flashimg;display="cache"
+/omr_image			emmc	/dev/block/platform/bootdevice/by-name/omr			flags=backup=0;flashimg;display="omr"
+/userdata_image		emmc	/dev/block/platform/bootdevice/by-name/userdata		flags=backup=1;flashimg;display="userdata"
+
+
+
+# File system: 
+/efs		 ext4 /dev/block/platform/bootdevice/by-name/efs      flags=backup=0;display="efs (mmcblk0p5)";backupname="efs (mmcblk0p5)"
+/sec_efs	 ext4 /dev/block/platform/bootdevice/by-name/sec_efs  flags=backup=0;display="sec_efs (mmcblk0p6)";backupname="sec_efs (mmcblk0p6)"
+/protect_f	 ext4 /dev/block/platform/bootdevice/by-name/protect1 flags=backup=0;display="protect_f (mmcblk0p15)";backupname="protect_f (mmcblk0p15)"
+/protect_s	 ext4 /dev/block/platform/bootdevice/by-name/protect2 flags=backup=0;display="protect_s (mmcblk0p16)";backupname="protect_s (mmcblk0p16)"
+/nvcfg		 ext4 /dev/block/platform/bootdevice/by-name/nvcfg    flags=backup=0;display="nvcfg (mmcblk0p12)";backupname="nvcfg (mmcblk0p12)"
+/nvdata		 ext4 /dev/block/platform/bootdevice/by-name/nvdata   flags=backup=0;display="nvdata (mmcblk0p13)";backupname="nvdata (mmcblk0p13)"
+/persist	 ext4 /dev/block/platform/bootdevice/by-name/persist  flags=backup=0;display="persist (mmcblk0p18)";backupname="persist (mmcblk0p18)"
+/omr		 ext4 /dev/block/platform/bootdevice/by-name/omr      flags=backup=0;display="omr (mmcblk0p38)";backupname="omr (mmcblk0p38)"
+/vendor 	 ext4 /dev/block/platform/bootdevice/by-name/vendor   flags=storage;backup=1;wipeingui;display="vendor (mmcblk0p33)";backupname="vendor (mmcblk0p33)"
+/Product     ext4 /dev/block/platform/bootdevice/by-name/product  flags=storage;backup=1;wipeingui;display="product (mmcblk0p34)";backupname="product (mmcblk0p34)"
+/system_root ext4 /dev/block/platform/bootdevice/by-name/system   flags=storage;backup=1;wipeingui;display="system (mmcblk0p35)";backupname="system (mmcblk0p35)"
+
+/cache      ext4 /dev/block/platform/bootdevice/by-name/cache flags=storage;backup=1;wipeingui;display="cache (mmcblk0p37)";backupname="cache (mmcblk0p37)"
+/data ext4 /dev/block/platform/bootdevice/by-name/userdata flags=storage;wipeingui;display="userdata (mmcblk0p39)";backupname="userdata (mmcblk0p39)";encryptable=/dev/block/platform/bootdevice/by-name/metadata
+
+#/data				ext4	/dev/block/platform/bootdevice/by-name/cache		flags=backup=1;storage;wipeingui;display="Cache (replace data)";backupname="Cache (replace data)"
+#/encrypt_data		ext4	/dev/block/platform/bootdevice/by-name/userdata		flags=backup=0;storage;wipeingui;display="Data (encrypted)";backupname="Data (encrypted)";encryptable=/dev/block/platform/bootdevice/by-name/metadata
+
+
+# External device
+/external_sd	auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=storage;wipeingui;removable;display="microsd (mmcblk1p1)"
+/external_sdp2	auto	/dev/block/mmcblk1p2	/dev/block/mmcblk1			flags=storage;wipeingui;removable;display="microsd (mmcblk1p2)"
+/external_sdp3	auto	/dev/block/mmcblk1p3	/dev/block/mmcblk1			flags=storage;wipeingui;removable;display="microsd (mmcblk1p3)"
+/external_sdp4	auto	/dev/block/mmcblk1p4	/dev/block/mmcblk1			flags=storage;wipeingui;removable;display="microsd (mmcblk1p4)"
+
+/usb1			auto	/dev/block/sda1			/dev/block/sda				flags=storage;wipeingui;removable;display="usb (sda1)"
+/usb2			auto	/dev/block/sda2			/dev/block/sda				flags=storage;wipeingui;removable;display="usb (sda2)"
+/usb3			auto	/dev/block/sda3			/dev/block/sda				flags=storage;wipeingui;removable;display="usb (sda3)"
+/usb4			auto	/dev/block/sda4			/dev/block/sda				flags=storage;wipeingui;removable;display="usb (sda4)"
+
+
+
