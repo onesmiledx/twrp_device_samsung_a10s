@@ -1,3 +1,5 @@
+ro.display.series=Samsung Galaxy A10ass
+ro.board.platform=mt6765
 persist.service.adb.enable=1
 persist.service.debuggable=1
 persist.sys.usb.config=mtp,adb
