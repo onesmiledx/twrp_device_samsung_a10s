@@ -6,3 +6,4 @@ persist.sys.usb.config=mtp,adb
 ro.adb.secure=0
 persist.sys.isUsbOtgEnabled=true
 ro.treble.enabled=true
+persist.sys.usb.config=mtp,adb
