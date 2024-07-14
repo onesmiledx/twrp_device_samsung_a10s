@@ -111,6 +111,12 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # VNDK
 BOARD_VNDK_VERSION := current
 
+# Graphics
+TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
+
+# PowerHAL
+TARGET_POWERHAL_VARIANT := samsung
+
 # TWRP specific build flags
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_THEME := portrait_hdpi
