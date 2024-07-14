@@ -29,16 +29,9 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
 TARGET_USES_64_BIT_BINDER := true
-TARGET_IS_64_BIT := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a10s,a10sxx
-
-TARGET_CPU_ABI_LIST := arm64-v8a,armeabi-v7a,armeabi
-TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a
-TARGET_CPU_ABI_LIST_32_BIT := armeabi-v7a,armeabi
-
-TARGET_BOARD_SUFFIX := _64
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
@@ -137,7 +130,6 @@ TW_MAX_BRIGHTNESS := 255
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/kernel/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
-TW_SCREEN_BLANK_ON_BOOT := true
 TW_SKIP_COMPATIBILITY_CHECK := true
 
 # Locale
